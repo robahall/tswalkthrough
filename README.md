@@ -1,9 +1,10 @@
 # Walkthrough of Forecasting: Principles and Practice
 
-Working through chapters and exercises in [Forecasting: Principles and Practice](https://otexts.com/fpp2/). 
+Working through of chapters and exercises in [Forecasting: Principles and Practice](https://otexts.com/fpp2/). 
 
 The book is based on time series in R. This walk through is to find equivalent packages in python and concisely show 
-how to use them in python.
+how to use them in python. All analysis is by the original author and this is so I can reference how to quickly perform 
+the same techniques and observations in Python. 
 
 
 
