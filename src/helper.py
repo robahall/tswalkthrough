@@ -17,10 +17,24 @@ def make_ts(start_date, periods, freq='YS'):
     frequency = Number of of observations before the seasonal pattern repeats. Default is YS.
     '''
 
+    try:
+        if freq == 'YS':
+            y = pd.Series(pd.date_range(start_date, periods=periods, freq=freq))
+            z = pd.Series(np.random.random((y.shape[0],))*100)
+            y = pd.concat([y, z], axis=1)
+            y.columns = ['Date', 'Observation']
+            y.set_index('Date', inplace = True)
+            return y
+        elif freq == 'M':
+            y = pd.Series(pd.date_range(start_date, periods=periods, freq=freq))
+            z = pd.Series(np.sin(12 * y.index) * np.random.random((y.shape[0],)) * 100)
+            y = pd.concat([y, z], axis=1)
+            y.columns = ['Date', 'Observation']
+            y.set_index('Date', inplace=True)
+            return y
 
-    y = pd.Series(pd.date_range(start_date, periods=periods, freq=freq))
-    z = pd.Series(np.random.random((y.shape[0],))*100)
-    y = pd.concat([y, z], axis=1)
-    y.columns = ['Year', 'Observation']
-    y.set_index('Year', inplace = True)
-    return y
+
+
+    except:
+        print("You done goofed son.")
+
